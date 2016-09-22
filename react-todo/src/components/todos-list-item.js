@@ -8,7 +8,7 @@ export default class TodosListItem extends React.Component {
             {this.props.text}
           </td>
           <td>
-            <button>Save</button>
+            <button>Edit</button>
             <button>Delete</button>
           </td>
         </tr>
