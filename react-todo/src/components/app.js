@@ -5,11 +5,11 @@ import _ from 'lodash';
 
 const todos = [
 {
-  text: 'task one',
+  text: 'click task name',
   isCompleted: false
 },
 {
-  text: 'task two',
+  text: 'to toggle completion status',
   isCompleted: true
 }
 ];
@@ -24,14 +24,24 @@ export default class App extends React.Component {
   }
   render() {
       return (
-        <div>
-          <h1>React Tasker</h1>
-          <CreateTodo createTask={this.createTask.bind(this)} />
-          <TodosList todos={this.state.todos}
-                     deleteTask={this.deleteTask.bind(this)}
-                     saveTask={this.saveTask.bind(this)}
-                     toggleTask={this.toggleTask.bind(this)}
-          />
+        <div className="container">
+          <div className="row">
+            <div className="header col-md-4 col-md-offset-4">
+              <h1>React Tasker</h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="todo-input col-md-4 col-md-offset-4">
+              <CreateTodo createTask={this.createTask.bind(this)} />
+            </div>
+            <div className="todo-input col-md-4 col-md-offset-4">
+              <TodosList todos={this.state.todos}
+                         deleteTask={this.deleteTask.bind(this)}
+                         saveTask={this.saveTask.bind(this)}
+                         toggleTask={this.toggleTask.bind(this)}
+              />
+            </div>
+          </div>
         </div>
     );
   }
